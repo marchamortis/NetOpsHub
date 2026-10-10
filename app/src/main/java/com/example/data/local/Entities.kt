@@ -131,13 +131,15 @@ data class UserEntity(
     // (format: pbkdf2$100000$<saltHex>$<hashHex>) - never in plaintext.
     val passwordHash: String = "",
     val mustChangePassword: Boolean = false,
-    val createdAt: Long = System.currentTimeMillis(),
+    val createdAt: Long = System.currentTimeMillis()
+) {
     // v2.0.1: transient field used once at creation time to deliver the initial
-    // password over TLS to the server. It is NOT persisted in Room (@Ignore)
+    // password over TLS to the server. It is NOT persisted in Room (@Ignore,
+    // declared in the class body so the Room constructor stays fully matchable)
     // and is immediately replaced by a PBKDF2 hash.
     @androidx.room.Ignore
-    val plainPassword: String = ""
-)
+    var plainPassword: String = ""
+}
 
 @Entity(tableName = "phonebook")
 data class PhoneEntryEntity(

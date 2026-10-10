@@ -456,21 +456,21 @@ private fun CreateUserDialog(
                     val userEmail = if (email.isBlank()) "$username@netopshub.internal" else email
                     val userDisp = if (displayName.isBlank()) username else displayName
 
-                    onCreate(
-                        UserEntity(
-                            id = "u_${username.lowercase()}_${System.currentTimeMillis()}",
-                            username = username.trim().lowercase(),
-                            displayName = userDisp,
-                            email = userEmail,
-                            role = selectedRole,
-                            isActive = isActive,
-                            // v2.0.1: plaintext travels once via TLS (plainPassword),
-                            // Room stores the PBKDF2 hash only.
-                            plainPassword = password.trim(),
-                            mustChangePassword = true,
-                            createdAt = System.currentTimeMillis()
-                        )
+                    // v2.0.1: plaintext travels once via TLS (plainPassword),
+                    // Room stores the PBKDF2 hash only.
+                    val newUser = UserEntity(
+                        id = "u_${username.lowercase()}_${System.currentTimeMillis()}",
+                        username = username.trim().lowercase(),
+                        displayName = userDisp,
+                        email = userEmail,
+                        role = selectedRole,
+                        isActive = isActive,
+                        mustChangePassword = true,
+                        createdAt = System.currentTimeMillis()
                     )
+                    newUser.plainPassword = password.trim()
+
+                    onCreate(newUser)
                 },
                 colors = ButtonDefaults.buttonColors(containerColor = tokens.primary),
                 modifier = Modifier.testTag("submit_create_user_button")
