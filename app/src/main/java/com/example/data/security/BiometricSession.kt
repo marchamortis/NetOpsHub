@@ -127,7 +127,7 @@ object BiometricSession {
 
         val prompt = BiometricPrompt(
             activity,
-            android.content.ContextCompat.getMainExecutor(activity),
+            androidx.core.content.ContextCompat.getMainExecutor(activity),
             object : BiometricPrompt.AuthenticationCallback() {
                 override fun onAuthenticationSucceeded(result: BiometricPrompt.AuthenticationResult) {
                     try {
@@ -191,7 +191,7 @@ object BiometricSession {
 
         val prompt = BiometricPrompt(
             activity,
-            android.content.ContextCompat.getMainExecutor(activity),
+            androidx.core.content.ContextCompat.getMainExecutor(activity),
             object : BiometricPrompt.AuthenticationCallback() {
                 override fun onAuthenticationSucceeded(result: BiometricPrompt.AuthenticationResult) {
                     try {

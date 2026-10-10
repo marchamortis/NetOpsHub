@@ -207,6 +207,7 @@ data class SyncAllResponse(
     val rahkaran: List<RemoteRahkaran>? = null,
     val articles: List<RemoteArticle>? = null,
     val users: List<RemoteUser>? = null,
+    val phonebook: List<RemotePhoneEntry>? = null,
     val error: String? = null
 )
 

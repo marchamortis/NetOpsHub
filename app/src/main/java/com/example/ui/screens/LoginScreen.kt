@@ -39,6 +39,7 @@ import androidx.fragment.app.FragmentActivity
 import com.example.R
 import com.example.data.local.UserEntity
 import com.example.data.security.BiometricSession
+import com.example.data.security.SecureVault
 import com.example.ui.components.GlassCard
 import com.example.ui.theme.LocalNetOpsColors
 import com.example.ui.theme.TerminalGreen
@@ -513,7 +514,7 @@ fun LoginScreen(
             onPasswordSuccessfullyChanged = { newPass ->
                 coroutineScope.launch {
                     onChangePassword(user.id, newPass)
-                    val updatedUser = user.copy(password = newPass, mustChangePassword = false)
+                    val updatedUser = user.copy(passwordHash = SecureVault.hashPassword(newPass), mustChangePassword = false)
                     pendingUserForPasswordChange = null
                     Toast.makeText(
                         context,

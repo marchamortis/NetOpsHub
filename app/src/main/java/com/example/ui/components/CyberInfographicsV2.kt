@@ -1,5 +1,6 @@
 package com.example.ui.components
 
+import android.widget.Toast
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -202,12 +203,17 @@ internal fun V2WarnItem(textEn: String, textFa: String, isPersian: Boolean) {
 }
 
 @Composable
-internal fun V2StatBadge(value: String, label: String, color: Color) {
+internal fun V2StatBadge(
+    value: String,
+    label: String,
+    color: Color,
+    modifier: Modifier = Modifier
+) {
     Surface(
         shape = RoundedCornerShape(10.dp),
         color = color.copy(alpha = 0.12f),
         border = BorderStroke(1.dp, color.copy(alpha = 0.5f)),
-        modifier = Modifier.weight(1f)
+        modifier = modifier
     ) {
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
@@ -484,8 +490,8 @@ fun OspfBgpRoutingCard(isPersian: Boolean) {
         isPersian = isPersian
     ) {
         Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-            V2StatBadge("LSA/LSDB", "OSPF Database", NeonCyan)
-            V2StatBadge("AS-Path", "BGP Attribute", NeonPurple)
+            V2StatBadge("LSA/LSDB", "OSPF Database", NeonCyan, modifier = Modifier.weight(1f))
+            V2StatBadge("AS-Path", "BGP Attribute", NeonPurple, modifier = Modifier.weight(1f))
         }
         Spacer(Modifier.height(2.dp))
 
