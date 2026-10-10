@@ -1,0 +1,28 @@
+*.iml
+.gradle
+.kotlin
+/local.properties
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+local.properties
+.env
+my-upload-key.jks
+*.jks.key
+# NOTE: debug.keystore is intentionally committed (v2.0.1) so that automated
+# OTA release builds are signed with the SAME stable key on every CI run.
+.build-outputs/
+app/build/
+NetOpsHub.apk
+NetOpsHub-SourceCode.zip
+/tmp/
+backend/.wrangler/
+.wrangler/

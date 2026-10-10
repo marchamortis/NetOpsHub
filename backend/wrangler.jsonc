@@ -1,0 +1,17 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "netops-hub-api",
+  "main": "src/index.ts",
+  "compatibility_date": "2025-02-14",
+  "account_id": "8652bde292ef4329a0c07e0bb745f93a",
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "netops-hub-d1",
+      "database_id": "f02eef64-663f-4819-bbc5-ccb9a19e4c39"
+    }
+  ],
+  "observability": {
+    "enabled": true
+  }
+}

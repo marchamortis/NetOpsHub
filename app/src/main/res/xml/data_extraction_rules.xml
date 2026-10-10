@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  v2.0.1 SECURITY: same exclusions for Android 12+ cloud backup and
+  device-to-device transfer.
+-->
+<data-extraction-rules>
+    <cloud-backup>
+        <exclude domain="database" path="." />
+        <exclude domain="sharedpref" path="netops_secure_vault.xml" />
+        <exclude domain="sharedpref" path="netops_biometric_session.xml" />
+        <exclude domain="sharedpref" path="netops_auth_prefs.xml" />
+        <exclude domain="sharedpref" path="netops_appearance_prefs.xml" />
+        <exclude domain="file" path="custom_app_bg.jpg" />
+    </cloud-backup>
+    <device-transfer>
+        <exclude domain="database" path="." />
+        <exclude domain="sharedpref" path="netops_secure_vault.xml" />
+        <exclude domain="sharedpref" path="netops_biometric_session.xml" />
+        <exclude domain="sharedpref" path="netops_auth_prefs.xml" />
+        <exclude domain="sharedpref" path="netops_appearance_prefs.xml" />
+        <exclude domain="file" path="custom_app_bg.jpg" />
+    </device-transfer>
+</data-extraction-rules>

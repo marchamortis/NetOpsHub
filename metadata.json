@@ -1,0 +1,6 @@
+{
+  "name": "NetOps Hub",
+  "description": "Professional IT & Network Operations platform featuring Company Infrastructure management, Network Academy knowledge base, and precision network engineering tools.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,138 @@
+name: Build and Release NetOps Hub (v2.0.1)
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-release:
+    name: Build APK + Windows Setup EXE & Publish Release
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v3
+
+      - name: Ensure Gradle Wrapper Executable
+        run: |
+          if [ -f "./gradlew" ]; then
+            chmod +x ./gradlew
+          else
+            gradle wrapper
+            chmod +x ./gradlew
+          fi
+
+      - name: Build Android APK (release, stable OTA signature)
+        run: |
+          ./gradlew assembleRelease --no-daemon || ./gradlew assembleDebug --no-daemon
+
+      - name: Locate built APK
+        id: apk
+        run: |
+          APK=$(ls app/build/outputs/apk/release/*.apk app/build/outputs/apk/debug/*.apk 2>/dev/null | head -n1)
+          echo "path=$APK" >> $GITHUB_OUTPUT
+          echo "Using APK: $APK"
+
+      - name: Install NSIS (Windows Setup EXE compiler)
+        run: |
+          sudo apt-get update -y
+          sudo apt-get install -y nsis zip
+
+      - name: Build NetOpsHub-Windows-Setup.exe
+        run: |
+          mkdir -p build-windows
+          cp ${{ steps.apk.outputs.path }} build-windows/NetOpsHub.apk
+          cp windows/install-wsa.bat build-windows/
+          cp windows/README-WINDOWS.md build-windows/
+          cd build-windows
+          makensis -V2 windows/installer.nsi 2>/dev/null || makensis -V2 installer.nsi 2>/dev/null || \
+            cp ../windows/installer.nsi . && makensis -V2 installer.nsi
+          ls -la NetOpsHub-Windows-Setup.exe
+
+      - name: Prepare Release Artifacts
+        run: |
+          mkdir -p release-artifacts
+
+          # 1. Android APK
+          cp ${{ steps.apk.outputs.path }} release-artifacts/NetOpsHub-Android.apk
+
+          # 2. Windows native Setup EXE (NSIS installer with APK + WSA helper)
+          cp build-windows/NetOpsHub-Windows-Setup.exe release-artifacts/NetOpsHub-Windows-Setup.exe
+
+          # 3. Windows Bundle (WSA Sideload & Desktop Launcher - portable zip)
+          mkdir -p /tmp/windows-bundle
+          cp windows/install-wsa.bat windows/README-WINDOWS.md /tmp/windows-bundle/
+          cp ${{ steps.apk.outputs.path }} /tmp/windows-bundle/NetOpsHub.apk
+          cd /tmp/windows-bundle && zip -r $GITHUB_WORKSPACE/release-artifacts/NetOpsHub-Windows-WSA.zip . && cd $GITHUB_WORKSPACE
+
+          # 4. Clean Full Project Source Code ZIP
+          zip -r release-artifacts/NetOpsHub-Full-Source.zip . -x ".git/*" ".github/*" "app/build/*" "build-windows/*" ".gradle/*" "release-artifacts/*"
+
+      - name: Determine Version Tag
+        id: version
+        run: |
+          if [[ "${{ github.ref }}" == refs/tags/* ]]; then
+            TAG_NAME="${GITHUB_REF#refs/tags/}"
+          else
+            TAG_NAME="v2.0.1.${{ github.run_number }}"
+          fi
+          echo "tag=$TAG_NAME" >> $GITHUB_OUTPUT
+
+      - name: Create GitHub Release & Upload Binaries
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.version.outputs.tag }}
+          name: NetOps Hub Release ${{ steps.version.outputs.tag }}
+          draft: false
+          prerelease: false
+          files: |
+            release-artifacts/NetOpsHub-Android.apk
+            release-artifacts/NetOpsHub-Windows-Setup.exe
+            release-artifacts/NetOpsHub-Windows-WSA.zip
+            release-artifacts/NetOpsHub-Full-Source.zip
+          body: |
+            ## 🚀 NetOps Hub v2.0.1 — Security Hardening + Phone Book + In-App Updates
+
+            ### 🛡 Security Fixes (v2.0.1)
+            - 🔐 Removed the static creator master-token bypass — every API call now requires a real login session
+            - 🔑 Passwords upgraded to PBKDF2-SHA256 (100k iterations, per-user salt) with transparent migration
+            - ⏱ Login rate limiting + failed-login audit trail
+            - 🧭 All data endpoints (servers/sites/vCenters/sync) now require authentication
+            - 🗄 Session tokens stored only as SHA-256 hashes, 24h TTL, revoked on password change
+            - 📵 No more HTTP body logging in release builds; R8 minification enabled
+            - 🔒 Backups disabled for databases & credential storage (`allowBackup=false`)
+
+            ### 📱 In-App OTA Updates
+            - The app now checks for a new version on every launch and offers **one-tap update from inside the app**
+            - Content (servers, articles, phone book) keeps streaming live via the authenticated sync channel
+
+            ### 📞 Phone Book (دفترچه تلفن)
+            - New module: First/Last name, Phone number, Company, Internal extension
+            - Creator/Admin can **import from Excel (.xlsx) / CSV** or add contacts manually
+            - One-tap dial and copy-extension support, per-company filtering
+
+            ### 🎓 Academy & Helpdesk — New Visual Maps
+            - 6 new CyberKid-style infographics: Kerberos Deep-Dive, AD Command Arsenal, AD Audit & Defense, OSPF vs BGP, IPsec VPN Phases, Windows Net Commands
+            - Helpdesk now ships **graphical decision-tree flow maps**: Internet Down, RDP Failure, Slow Network, AD Lockout, Printer Offline, ESXi Host Down
+
+            ### 📥 Downloads:
+            * **📱 Android (APK):** `NetOpsHub-Android.apk` — direct install (Android 7.0+)
+            * **💻 Windows (Setup EXE):** `NetOpsHub-Windows-Setup.exe` — desktop installer (bundles APK + WSA helper)
+            * **💻 Windows (Portable ZIP):** `NetOpsHub-Windows-WSA.zip` — WSA/BlueStacks sideload bundle
+            * **📦 Source Code:** `NetOpsHub-Full-Source.zip`

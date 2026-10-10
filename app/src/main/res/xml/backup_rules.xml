@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  v2.0.1 SECURITY: the local database (users, servers, phone book) and the
+  secure vault prefs must NEVER leave the device via cloud backups.
+-->
+<full-backup-content>
+    <exclude domain="database" path="." />
+    <exclude domain="sharedpref" path="netops_secure_vault.xml" />
+    <exclude domain="sharedpref" path="netops_biometric_session.xml" />
+    <exclude domain="sharedpref" path="netops_auth_prefs.xml" />
+    <exclude domain="sharedpref" path="netops_appearance_prefs.xml" />
+    <exclude domain="file" path="custom_app_bg.jpg" />
+</full-backup-content>

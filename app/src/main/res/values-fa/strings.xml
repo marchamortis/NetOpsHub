@@ -1,0 +1,160 @@
+<resources>
+    <string name="app_name">نت‌آپز هاب</string>
+    <string name="app_subtitle">پلتفرم عملیات شبکه و آکادمی تخصصی IT</string>
+    
+    <!-- Primary Sections -->
+    <string name="section_company">اطلاعات شرکت</string>
+    <string name="section_company_desc">زیرساخت سرورها، سایت‌ها، vCenter و راهکاران ابری</string>
+    <string name="section_academy">آکادمی شبکه</string>
+    <string name="section_academy_desc">نقشه‌های تصویری امنیت سایبری، اینفوگرافیک‌ها، Network+ و سیسکو</string>
+    <string name="section_helpdesk">هلپ‌دسک و عیب‌یابی</string>
+    <string name="section_helpdesk_desc">دیاگرام‌های عیب‌یابی تعاملی NOC، فلوچارت حل مسئله و تریاژ بحران</string>
+    <string name="section_tools">ابزارهای مهندسی شبکه</string>
+    <string name="section_tools_desc">ماشین‌حساب پیشرفته ساب‌نتینگ، VLSM، وایلدکارد، پهنای باند و ابزارهای مهندسی</string>
+    
+    <!-- Navigation -->
+    <string name="nav_dashboard">داشبورد</string>
+    <string name="nav_company">اطلاعات شرکت</string>
+    <string name="nav_academy">آکادمی شبکه</string>
+    <string name="nav_helpdesk">هلپ‌دسک</string>
+    <string name="nav_tools">ابزارها</string>
+    <string name="nav_search">جستجو</string>
+    <string name="nav_favorites">نشان‌شده‌ها</string>
+    <string name="nav_settings">تنظیمات</string>
+    
+    <!-- Company Tabs -->
+    <string name="tab_servers">سرورها</string>
+    <string name="tab_sites_vcenter">سایت‌ها و vCenter</string>
+    <string name="tab_rahkaran">سامانه‌های راهکاران</string>
+    
+    <!-- Server Details -->
+    <string name="server_name">نام سرور</string>
+    <string name="ip_address">آدرس IP</string>
+    <string name="service">سرویس</string>
+    <string name="rdp_port">پورت RDP</string>
+    <string name="vcenter_host">vCenter / هاست</string>
+    <string name="site">سایت / شعبه</string>
+    <string name="status">وضعیت</string>
+    <string name="status_ok">فعال (OK)</string>
+    <string name="status_off">خاموش</string>
+    <string name="copy_ip">کپی IP</string>
+    <string name="copy_rdp">کپی پورت RDP</string>
+    <string name="copy_url">کپی آدرس وب</string>
+    <string name="copied">در کلیپ‌بورد کپی شد</string>
+    <string name="filter_all">همه سایت‌ها</string>
+    <string name="search_servers_hint">جستجوی سرور، IP، سرویس...</string>
+    
+    <!-- Rahkaran -->
+    <string name="rahkaran_title">شرکت‌های راهکاران</string>
+    <string name="company_name">نام شرکت</string>
+    <string name="app_port">پورت اپلیکیشن</string>
+    <string name="web_port">پورت وب</string>
+    <string name="web_url">آدرس وب (URL)</string>
+    <string name="password_protected">محدود شده (فقط ادمین)</string>
+    <string name="open_link">باز کردن لینک</string>
+    
+    <!-- Academy -->
+    <string name="cat_helpdesk">هلپ‌دسک و پشتیبانی</string>
+    <string name="cat_network_plus">مفاهیم شبکه (Network+)</string>
+    <string name="cat_ccna">سیسکو CCNA</string>
+    <string name="cat_ccnp">سیسکو CCNP</string>
+    <string name="cat_mikrotik">میکروتیک (RouterOS)</string>
+    <string name="cat_fortigate">فایروال فورتی‌گیت</string>
+    <string name="cat_windows_server">ویندوز سرور و اکتیو دایرکتوری</string>
+    <string name="cat_fundamentals">اصول و پروتکل‌های شبکه</string>
+    <string name="cat_tools">ابزارهای مهندسی شبکه</string>
+    
+    <string name="search_academy_hint">جستجو در مقالات، دستورات، راهنماها...</string>
+    <string name="filter_difficulty">سطح دشواری</string>
+    <string name="difficulty_all">همه سطوح</string>
+    <string name="difficulty_basic">پایه</string>
+    <string name="difficulty_intermediate">متوسط</string>
+    <string name="difficulty_advanced">پیشرفته</string>
+    
+    <!-- Tools -->
+    <string name="tool_subnet_calc">ماشین‌حساب ساب‌نت IPv4</string>
+    <string name="tool_cidr_calc">محاسبه‌گر CIDR</string>
+    <string name="tool_vlsm_calc">محاسبه‌گر تخصیص VLSM</string>
+    <string name="tool_wildcard_calc">تبدیل وایلدکارد ماسک</string>
+    <string name="tool_ip_range">محدوده آدرس‌های IP</string>
+    <string name="tool_ipv6">ابزار فشرده‌سازی و آنالیز IPv6</string>
+    <string name="tool_bandwidth">محاسبه پهنای باند و زمان انتقال</string>
+    <string name="tool_mtu_mss">محاسبه‌گر MTU و MSS</string>
+    <string name="tool_mac">ابزار اعتبارسنجی مک‌آدرس</string>
+    <string name="tool_ports">مرجع پورت‌های TCP و UDP</string>
+    <string name="tool_http_errors">کدهای وضعیت HTTP</string>
+    <string name="tool_wireshark">مرجع فیلترهای وایرشارک</string>
+    
+    <!-- Calculator Fields -->
+    <string name="calc_calculate">محاسبه</string>
+    <string name="calc_reset">تنظیم مجدد</string>
+    <string name="calc_network_addr">آدرس شبکه (Network)</string>
+    <string name="calc_broadcast_addr">آدرس برودکست (Broadcast)</string>
+    <string name="calc_first_host">اولین هاست معتبر</string>
+    <string name="calc_last_host">آخرین هاست معتبر</string>
+    <string name="calc_total_hosts">تعداد کل آدرس‌ها</string>
+    <string name="calc_usable_hosts">هاست‌های قابل استفاده</string>
+    <string name="calc_mask">ساب‌نت ماسک</string>
+    <string name="calc_wildcard">وایلدکارد ماسک</string>
+    <string name="calc_prefix">طول پیشوند (Prefix)</string>
+    <string name="calc_binary">نمایش دودویی (باینری)</string>
+    
+    <!-- Appearance -->
+    <string name="settings_title">تنظیمات و ظاهر</string>
+    <string name="theme_selection">پوسته رنگی (Theme)</string>
+    <string name="theme_cyber_cyan">سایبر سایان (آبی فیروزه‌ای)</string>
+    <string name="theme_neon_purple">نئون بنفش</string>
+    <string name="theme_matrix_emerald">ماتریکس زمردی (سبز)</string>
+    <string name="theme_solar_gold">خورشیدی طلایی</string>
+    <string name="theme_ocean_sapphire">اقیانوس یاقوتی</string>
+    
+    <string name="background_customization">تصویر پس‌زمینه</string>
+    <string name="btn_choose_background">انتخاب تصویر دلخواه از گالری</string>
+    <string name="btn_reset_background">بازنشانی تصویر پیش‌فرض اتاق سرور</string>
+    <string name="glass_transparency">میزان شفافیت شیشه‌ای (Glass)</string>
+    <string name="dark_overlay">روشنایی و لایه تیرگی تیره</string>
+    <string name="language_selection">انتخاب زبان (Language)</string>
+    <string name="lang_english">انگلیسی (English)</string>
+    <string name="lang_persian">فارسی</string>
+    
+    <!-- Auth & Role -->
+    <string name="role_creator">مالک سیستم (Creator)</string>
+    <string name="role_admin">مدیر ارشد (Admin)</string>
+    <string name="role_editor">ویرایشگر (Editor)</string>
+    <string name="role_viewer">مشاهده‌کننده (Viewer)</string>
+    <string name="login_title">احراز هویت کاربر شبکه</string>
+    <string name="username">نام کاربری</string>
+    <string name="password">رمز عبور</string>
+    <string name="confirm_password">تکرار رمز عبور</string>
+    <string name="display_name">نام و نام خانوادگی</string>
+    <string name="btn_login">ورود به سیستم</string>
+    <string name="btn_logout">خروج</string>
+    <string name="demo_role_switch">تغییر نقش آزمایشی</string>
+    <string name="active_role">نقش فعال</string>
+    
+    <!-- User Management -->
+    <string name="user_management">مدیریت کاربران و دسترسی‌ها</string>
+    <string name="create_user">تعریف کاربر جدید</string>
+    <string name="edit_user">ویرایش مشخصات کاربر</string>
+    <string name="user_role">سطح دسترسی و نقش</string>
+    <string name="status_active">فعال</string>
+    <string name="status_inactive">غیرفعال</string>
+    <string name="reset_password">تغییر رمز عبور</string>
+    <string name="delete_user">حذف کاربر</string>
+    
+    <!-- Academy Additional Categories -->
+    <string name="cat_windows_tricks">ترفندها و تکنیک‌های پیشرفته ویندوز</string>
+    <string name="sync_online_knowledge">بروزرسانی از منابع آنلاین</string>
+    <string name="online_sources_title">منابع و پایگاه‌های آنلاین IT</string>
+    <string name="online_sync_success">اطلاعات با پایگاه‌های آنلاین مایکروسافت، سیسکو و میکروتیک همگام شد</string>
+    
+    <!-- Common -->
+    <string name="back">بازگشت</string>
+    <string name="save">ذخیره</string>
+    <string name="cancel">انصراف</string>
+    <string name="search">جستجو</string>
+    <string name="no_results">موردی یافت نشد</string>
+    <string name="notes">یادداشت‌ها</string>
+    <string name="favorites">علاقه‌مندی‌ها</string>
+    <string name="add_note">افزودن یادداشت شخصی</string>
+</resources>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- v2.0.1: paths exposed to the package installer for OTA updates -->
+<paths>
+    <files-path
+        name="ota_updates"
+        path="Download/" />
+    <cache-path
+        name="ota_cache"
+        path="download/" />
+</paths>

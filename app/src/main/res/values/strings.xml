@@ -1,0 +1,160 @@
+<resources>
+    <string name="app_name">NetOps Hub</string>
+    <string name="app_subtitle">Network Operations &amp; Academy Platform</string>
+    
+    <!-- Primary Sections -->
+    <string name="section_company">Company Information</string>
+    <string name="section_company_desc">Infrastructure, Servers, Sites, vCenter, and Rahkaran ERP</string>
+    <string name="section_academy">Network Academy</string>
+    <string name="section_academy_desc">Cyber Security Maps, Visual Infographics, Network+, CCNA, CCNP &amp; Guides</string>
+    <string name="section_helpdesk">Troubleshooting Helpdesk</string>
+    <string name="section_helpdesk_desc">Interactive NOC Diagnostics, Flowcharts, Incident Triage &amp; Quick Resolution</string>
+    <string name="section_tools">Engineering Tools</string>
+    <string name="section_tools_desc">Professional Subnetting Calculator, VLSM, Bandwidth, MAC &amp; Engineering Tools</string>
+    
+    <!-- Navigation -->
+    <string name="nav_dashboard">Dashboard</string>
+    <string name="nav_company">Company</string>
+    <string name="nav_academy">Academy</string>
+    <string name="nav_helpdesk">Helpdesk</string>
+    <string name="nav_tools">Tools</string>
+    <string name="nav_search">Search</string>
+    <string name="nav_favorites">Favorites</string>
+    <string name="nav_settings">Settings</string>
+    
+    <!-- Company Tabs -->
+    <string name="tab_servers">Servers</string>
+    <string name="tab_sites_vcenter">Sites &amp; vCenter</string>
+    <string name="tab_rahkaran">Rahkaran ERP</string>
+    
+    <!-- Server Details -->
+    <string name="server_name">Server Name</string>
+    <string name="ip_address">IP Address</string>
+    <string name="service">Service</string>
+    <string name="rdp_port">RDP Port</string>
+    <string name="vcenter_host">vCenter / Host</string>
+    <string name="site">Site</string>
+    <string name="status">Status</string>
+    <string name="status_ok">Online (OK)</string>
+    <string name="status_off">Offline</string>
+    <string name="copy_ip">Copy IP</string>
+    <string name="copy_rdp">Copy RDP</string>
+    <string name="copy_url">Copy URL</string>
+    <string name="copied">Copied to clipboard</string>
+    <string name="filter_all">All Sites</string>
+    <string name="search_servers_hint">Search server, IP, service...</string>
+    
+    <!-- Rahkaran -->
+    <string name="rahkaran_title">Rahkaran Companies</string>
+    <string name="company_name">Company Name</string>
+    <string name="app_port">App Port</string>
+    <string name="web_port">Web Port</string>
+    <string name="web_url">Web URL</string>
+    <string name="password_protected">Restricted (Admin Only)</string>
+    <string name="open_link">Open Link</string>
+    
+    <!-- Academy -->
+    <string name="cat_helpdesk">Help Desk</string>
+    <string name="cat_network_plus">Network+</string>
+    <string name="cat_ccna">CCNA</string>
+    <string name="cat_ccnp">CCNP</string>
+    <string name="cat_mikrotik">MikroTik RouterOS</string>
+    <string name="cat_fortigate">FortiGate Firewall</string>
+    <string name="cat_windows_server">Windows Server &amp; AD</string>
+    <string name="cat_fundamentals">Fundamentals</string>
+    <string name="cat_tools">Network Tools</string>
+    
+    <string name="search_academy_hint">Search knowledge base, commands, guides...</string>
+    <string name="filter_difficulty">Difficulty</string>
+    <string name="difficulty_all">All Levels</string>
+    <string name="difficulty_basic">Fundamental</string>
+    <string name="difficulty_intermediate">Intermediate</string>
+    <string name="difficulty_advanced">Advanced</string>
+    
+    <!-- Tools -->
+    <string name="tool_subnet_calc">IPv4 Subnet Calculator</string>
+    <string name="tool_cidr_calc">CIDR Calculator</string>
+    <string name="tool_vlsm_calc">VLSM Calculator</string>
+    <string name="tool_wildcard_calc">Wildcard Mask</string>
+    <string name="tool_ip_range">IP Range Calculator</string>
+    <string name="tool_ipv6">IPv6 Utility</string>
+    <string name="tool_bandwidth">Bandwidth &amp; Transfer Time</string>
+    <string name="tool_mtu_mss">MTU / MSS Calculator</string>
+    <string name="tool_mac">MAC Address Tools</string>
+    <string name="tool_ports">Port Reference</string>
+    <string name="tool_http_errors">HTTP Status Codes</string>
+    <string name="tool_wireshark">Wireshark Filters</string>
+    
+    <!-- Calculator Fields -->
+    <string name="calc_calculate">Calculate</string>
+    <string name="calc_reset">Reset</string>
+    <string name="calc_network_addr">Network Address</string>
+    <string name="calc_broadcast_addr">Broadcast Address</string>
+    <string name="calc_first_host">First Usable Host</string>
+    <string name="calc_last_host">Last Usable Host</string>
+    <string name="calc_total_hosts">Total Addresses</string>
+    <string name="calc_usable_hosts">Usable Hosts</string>
+    <string name="calc_mask">Subnet Mask</string>
+    <string name="calc_wildcard">Wildcard Mask</string>
+    <string name="calc_prefix">Prefix Length</string>
+    <string name="calc_binary">Binary Representation</string>
+    
+    <!-- Appearance -->
+    <string name="settings_title">Settings &amp; Appearance</string>
+    <string name="theme_selection">Color Theme</string>
+    <string name="theme_cyber_cyan">Cyber Cyan</string>
+    <string name="theme_neon_purple">Neon Purple</string>
+    <string name="theme_matrix_emerald">Matrix Emerald</string>
+    <string name="theme_solar_gold">Solar Gold</string>
+    <string name="theme_ocean_sapphire">Ocean Sapphire</string>
+    
+    <string name="background_customization">Background Image</string>
+    <string name="btn_choose_background">Pick Custom Wallpaper</string>
+    <string name="btn_reset_background">Reset Default Wallpaper</string>
+    <string name="glass_transparency">Glass Surface Opacity</string>
+    <string name="dark_overlay">Dark Vignette Overlay</string>
+    <string name="language_selection">Language / زبان</string>
+    <string name="lang_english">English</string>
+    <string name="lang_persian">فارسی (Persian)</string>
+    
+    <!-- Auth & Role -->
+    <string name="role_creator">Creator</string>
+    <string name="role_admin">Admin</string>
+    <string name="role_editor">Editor</string>
+    <string name="role_viewer">Viewer</string>
+    <string name="login_title">Operator Authentication</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="display_name">Display Name</string>
+    <string name="btn_login">Sign In</string>
+    <string name="btn_logout">Sign Out</string>
+    <string name="demo_role_switch">Switch Test Role</string>
+    <string name="active_role">Active Role</string>
+    
+    <!-- User Management -->
+    <string name="user_management">User Management</string>
+    <string name="create_user">Create User</string>
+    <string name="edit_user">Edit User</string>
+    <string name="user_role">User Role</string>
+    <string name="status_active">Active</string>
+    <string name="status_inactive">Inactive</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="delete_user">Delete User</string>
+    
+    <!-- Academy Additional Categories -->
+    <string name="cat_windows_tricks">Windows Pro Tips &amp; Hacks</string>
+    <string name="sync_online_knowledge">Sync Online Knowledge</string>
+    <string name="online_sources_title">Online Knowledge Sources</string>
+    <string name="online_sync_success">Synchronized with online IT feeds</string>
+    
+    <!-- Common -->
+    <string name="back">Back</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="search">Search</string>
+    <string name="no_results">No results found</string>
+    <string name="notes">Notes</string>
+    <string name="favorites">Favorites</string>
+    <string name="add_note">Add Personal Note</string>
+</resources>
