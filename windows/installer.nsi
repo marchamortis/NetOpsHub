@@ -24,7 +24,7 @@ SetCompressor /SOLID lzma
 !insertmacro MUI_PAGE_FINISH
 
 !insertmacro MUI_LANGUAGE "English"
-!insertmacro MUI_LANGUAGE "Persian"
+!insertmacro MUI_LANGUAGE "Farsi"
 
 Section "Install"
   SetOutPath "$INSTDIR"
